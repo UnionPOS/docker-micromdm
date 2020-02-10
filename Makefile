@@ -1,6 +1,6 @@
 export DOCKER_ORG ?= unionpos
 export DOCKER_IMAGE ?= $(DOCKER_ORG)/micromdm
-export DOCKER_TAG ?= 1.4.1
+export DOCKER_TAG ?= 1.6
 export DOCKER_IMAGE_NAME ?= $(DOCKER_IMAGE):$(DOCKER_TAG)
 export DOCKER_BUILD_FLAGS =
 
