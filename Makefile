@@ -13,13 +13,17 @@ build: docker/build
 docs: readme/deps readme
 .PHONY: docs
 
+push:
+	$(DOCKER) push $(DOCKER_IMAGE_NAME)
+.PHONY: push
+
 run:
-	docker container run \
+	$(DOCKER) container run \
 		--publish "80:80" \
 		--publish "443:443" \
 		--attach STDOUT ${DOCKER_IMAGE_NAME}
 
 it:
-	docker run -it \
+	$(DOCKER) run -it \
 		--publish "8080:8080" \
 		${DOCKER_IMAGE_NAME} /bin/bash
